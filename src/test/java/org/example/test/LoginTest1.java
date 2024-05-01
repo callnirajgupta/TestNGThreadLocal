@@ -4,13 +4,16 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.lang.reflect.Method;
+
+import static org.example.util.ExtentTestManager.startTest;
 
 public class LoginTest1 extends BaseTest {
 
 
-        @Test
-        public void loginWithInvalidEmailTest() throws IOException {
-
+        @Test(description = "Invalid Login Scenario")
+        public void loginWithInvalidEmailTest(Method method) throws IOException {
+            startTest(method.getName(), "Invalid Login Scenario");
             getDriver().get("http://automationpractice.com/");
             LoginPage login = new LoginPage(getDriver());
 

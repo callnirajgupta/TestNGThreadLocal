@@ -1,16 +1,19 @@
 package org.example.test;
 
 import org.testng.Assert;
-import org.testng.annotations.Listeners;
+
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.lang.reflect.Method;
 
-//@Listeners(org.example.util.TestListener.class) we can add at class level or directly to testNg.xml
+import static org.example.util.ExtentTestManager.startTest;
+
 public class LoginTest extends BaseTest {
 
-        @Test
-        public void loginTest() throws IOException {
+        @Test(description = "valid Login Scenario")
+        public void loginTest(Method method) throws IOException {
+            startTest(method.getName(), "valid Login Scenario");
             getDriver().get("http://automationpractice.com/");
             LoginPage login = new LoginPage(getDriver());
 
