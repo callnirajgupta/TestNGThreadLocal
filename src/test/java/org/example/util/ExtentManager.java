@@ -13,7 +13,7 @@ public class ExtentManager {
             reporter.config().setReportName("Sample Extent Report");
             reporter.config().setDocumentTitle("Title of the Report Comes here ");
             // Name of the report
-            reporter.config().setReportName("Name of the Report Comes here ");
+
             // Dark Theme
             reporter.config().setTheme(Theme.STANDARD);
             extentReports.attachReporter(reporter);

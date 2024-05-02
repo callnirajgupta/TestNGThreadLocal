@@ -32,7 +32,8 @@ public class LoginPage {
 
         public LoginPage(WebDriver driver){
 
-
+            this.driver=driver;
+            PageFactory.initElements(driver,this);
         }
         //valid email and valid password
         public String doLogin(String email, String password){
